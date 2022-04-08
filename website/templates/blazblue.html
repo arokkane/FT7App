@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{% block title %}Blazblue stats{% endblock %}
+{%block content%}
+<BR/>
+<h1 align="center">Stats</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Character</th>
+        <th scope="col">Games Played</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for character in data %}
+    <tr>
+    <th scope="row">{{character[0].name}}</th> 
+    <td>{{character[1]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{%endblock%}

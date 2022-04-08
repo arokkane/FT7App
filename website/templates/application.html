@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    Application
+{% endblock title %}
+{% block content %}
+<form method="POST">
+    <BR/>
+    <h3 align="center">{{ event.name }}</h3>
+    {{ form.hidden_tag()}}
+    {{ form.name.label(class="form-label") }}
+    {{ form.name(class="form-control")}}
+    <BR/>
+    {{ form.character.label(class="form-label")}}
+    {{ form.character(class="form-control") }}
+    <BR/>
+    {{ form.notes.label(class="form-label")}}
+    {{ form.notes(class="form-control") }}
+    <BR/>
+    {{form.submit(class="btn btn-secondary")}}
+</form>
+{% endblock content %}
