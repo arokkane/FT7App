@@ -3,6 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+from flask_sslify import SSLify
 from flask import Flask, render_template, redirect, url_for
 
 
@@ -11,6 +12,7 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__, static_url_path='/static')
+    sslify = SSLify(app)
     app.config.from_object('website.config.DevelopmentConfig')
     db.init_app(app)
     
